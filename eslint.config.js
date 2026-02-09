@@ -1,8 +1,8 @@
 import js from "@eslint/js";
 import globals from "globals";
+import react from "eslint-plugin-react";
 import reactHooks from "eslint-plugin-react-hooks";
 import reactRefresh from "eslint-plugin-react-refresh";
-import react from "eslint-plugin-react";
 import { defineConfig, globalIgnores } from "eslint/config";
 
 export default defineConfig([
@@ -14,7 +14,7 @@ export default defineConfig([
     extends: [
       js.configs.recommended,
       react.configs.recommended,
-      reactHooks.configs["recommended-latest"],
+      reactHooks.configs.recommended,
       reactRefresh.configs.vite,
     ],
 
@@ -41,7 +41,7 @@ export default defineConfig([
           argsIgnorePattern: "^_",
         },
       ],
-      "react/react-in-jsx-scope": "off", // Not needed in React 17+
+      "react/react-in-jsx-scope": "off"
     },
   },
 ]);
